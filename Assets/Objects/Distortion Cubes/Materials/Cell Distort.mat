@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cell Distort
+  m_Shader: {fileID: -6465566751694194690, guid: 5eb76d7e65409ee4dad88d15373716d8,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_120027EB: 16.29
+    - Vector1_7F158268: -122.6
+    - Vector1_CD16A8AC: 66.42
+    - Vector1_DE24599B: 93.42
+    - Vector1_E57932CA: 1
+    - _DistortAmount: 0.625
+    - _Scale: 1000
+    - _Speed: 0
+    m_Colors:
+    - Color_81F7F656: {r: 1, g: 0.13679248, b: 0.13679248, a: 0}
+    - Color_D0B5656B: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
+    - Vector2_E7E0824C: {r: 14.45, g: 13.08, b: 49.13, a: 0}
+  m_BuildTextureStacks: []

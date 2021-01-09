@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Portal TV Noise
+  m_Shader: {fileID: -6465566751694194690, guid: 80c4433760d592d4daf68ece3ce8eb48,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Noise_Scale: 124.91
+    - Normal_Strength: 107.9
+    - Twirl_: 1
+    - Vector1_1FB040C3: 0.028
+    - _Alpha: 0.4
+    m_Colors:
+    - Color_A73838F3: {r: 0.22315946, g: 0.04313723, b: 1, a: 0}
+  m_BuildTextureStacks: []
