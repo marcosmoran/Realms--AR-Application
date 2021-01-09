@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using DentedPixel;
+using UnityEngine.Video;
 public class EnviromentController : MonoBehaviour
 {
     // This Scripts sets up the generated world inside portal, every time the player starts the experience it will select 3 items from different categories.
@@ -12,38 +13,68 @@ public class EnviromentController : MonoBehaviour
 
     [SerializeField]
     List<GameObject> artefacts;
-    List<Material> enviroments;
+    GameObject currentArtefact;
+
     [SerializeField]
-    public GameObject currentArtefact;
-    public GameObject currentEnviroment;
+    VideoPlayer skybox;
+    [SerializeField]
+    List<VideoClip> enviromentsVideos;
+    VideoClip currentEnviroment;
     [SerializeField]
     Volume postProcess;
     //List<Event> events;
     void Start()
     {
         Debug.Log("Enviroment Controller Initialized");
-        PortalExit();
-        currentEnviroment.SetActive(false);
-        Events.events.onEnteredPortal += PortalEnter;
-        Events.events.onExitedPortal += PortalExit;
+
+        //Testing
+        skybox.gameObject.SetActive(false);
+        Events.events.onPortalSpawned += PortalSpawned;
+        Events.events.onEnteredPortal += PortalEntered;
+        Events.events.onExitedPortal += PortalExited;
+
 
     }
+    #region Enviroment and Artefact Testing
+    public void ChooseArtefact(int artefactID)
+    {
+        currentArtefact = artefacts[artefactID];
 
-    void PortalEnter()
+        foreach (GameObject artefact in artefacts)
+        {
+
+            artefact.SetActive(false);
+
+        }
+    }
+    public void ChooseVideoEnviroment(int videoID)
+    {
+        currentEnviroment = enviromentsVideos[videoID];
+        skybox.clip = currentEnviroment;
+        skybox.Play();
+
+    }
+    #endregion
+
+    void PortalSpawned()
+    {
+        skybox.gameObject.SetActive(true);
+    }
+    void PortalEntered()
     {
         Shader.SetGlobalInt("_InsidePortalStencilComp", 6);
         currentArtefact.SetActive(true);
-        var postprocessWeight = 0;
+        var postprocessWeight = 1;
         LeanTween.value(postprocessWeight, 1, 0.5f).setOnUpdate((float val) =>
         {
             postProcess.weight = val;
         });
     }
 
-    void PortalExit()
+    void PortalExited()
     {
         Shader.SetGlobalInt("_InsidePortalStencilComp", 3);
-        currentArtefact.SetActive(false);
+
         postProcess.weight = 0;
     }
 }

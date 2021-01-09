@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Trres
-  m_Shader: {fileID: -6465566751694194690, guid: 30d952fece660954aae393d1f43b5fac,
+  m_Name: Atmosphere 1
+  m_Shader: {fileID: -6465566751694194690, guid: 9a6b57e0b0d952d419d720807e434f8a,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,7 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Cubemap_CBF59AB5:
-        m_Texture: {fileID: 8900000, guid: a807fe6e1fd66284a837687bfc21b024, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C2EABB44:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []

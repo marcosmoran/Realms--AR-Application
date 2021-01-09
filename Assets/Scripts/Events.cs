@@ -11,6 +11,12 @@ public class Events : MonoBehaviour
         events = this;
     }
 
+    public event Action onPortalSpawned;
+    public void PortalSpawned()
+    {
+        Debug.Log("Portal Spawned");
+        onPortalSpawned();
+    }
     public event Action onEnteredPortal;
     public void EnteredPortal()
     {

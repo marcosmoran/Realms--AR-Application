@@ -5,8 +5,7 @@ using UnityEngine;
 public class PortalController : MonoBehaviour
 {
     #region Class References
-    [SerializeField]
-    DebugMode debugMode;
+   
     [SerializeField]
     EnviromentController enviromentController;
 
@@ -32,7 +31,7 @@ public class PortalController : MonoBehaviour
         GetPortalRefs();
         SetInitialValues();
         Events.events.ExitedPortal();
-        if (debugMode.isOn) SpawnPortal();
+        
     }
 
     void GetPortalRefs()
@@ -80,7 +79,7 @@ public class PortalController : MonoBehaviour
             portalWindow.SetActive(true);
             portalStencil.SetActive(true);
 
-            enviromentController.currentEnviroment.SetActive(true);
+            Events.events.PortalSpawned();
             portalDoorAnim.Play("OpenDoor");
         }
         );
@@ -113,7 +112,6 @@ public class PortalController : MonoBehaviour
         Debug.Log("Collision");
 
         Vector3 playerPos = Camera.main.transform.position;
-        //+ Camera.main.transform.forward * (Camera.main.nearClipPlane * 4);
 
         Debug.Log("RootPos " + rootPos.z + " Player Pos " + playerPos.z);
         if (rootPos.z > playerPos.z)
@@ -121,14 +119,14 @@ public class PortalController : MonoBehaviour
             if (!isInsidePortal)
             {
                 Events.events.EnteredPortal();
-                ChangeMatStencil(6);
+
                 isInsidePortal = true;
             }
         }
         else if (isInsidePortal)
         {
             Events.events.ExitedPortal();
-            ChangeMatStencil(3);
+
             isInsidePortal = false;
 
         }
@@ -142,16 +140,6 @@ public class PortalController : MonoBehaviour
         portalStencil.GetComponent<MeshRenderer>().enabled = true;
     }
 
-
-    void ChangeMatStencil(int stencilNum)
-    {
-
-        // foreach (Material mat in materials)
-        // {
-        //     mat.SetInt("_Stencil", stencilNum);
-        // }
-
-    }
     #endregion
 
 }

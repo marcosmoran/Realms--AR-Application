@@ -20,7 +20,7 @@ public class ARController : MonoBehaviour
     {
         Screen.fullScreen = false;
         Debug.Log("AR Controller Initialized");
-        planeManager.planesChanged += FindPlane;
+        if (!DebugMode.debug.appDebug) planeManager.planesChanged += FindPlane;
 
     }
 
@@ -30,6 +30,19 @@ public class ARController : MonoBehaviour
 
     }
 
+    //Debug
+    public void ActivatePlaneDetect()
+    {
+        if (DebugMode.debug.editorDebug)
+        {
+            portalController.SpawnPortal();
+        }
+        else
+        {
+            planeManager.planesChanged += FindPlane;
+        }
+        Events.events.ExitedPortal();
+    }
 
     void FindPlane(ARPlanesChangedEventArgs args)
     {
