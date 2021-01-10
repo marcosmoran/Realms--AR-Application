@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sphere Marble MAt
+  m_Name: Sphere Marble Mat
   m_Shader: {fileID: -6465566751694194690, guid: e06180d27602279419a5c51a7dad9527,
     type: 3}
   m_ShaderKeywords: _COLORADDSUBDIFF_ON
@@ -124,7 +124,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_C14B9CFF: {r: 0.46048418, g: 0.28368637, b: 0.8018868, a: 0.7607843}
+    - Color_C14B9CFF: {r: 0.098122105, g: 0.31172925, b: 0.990566, a: 1}
     - Vector3_1E97C873: {r: 0.82, g: 6, b: 75.7, a: 0}
     - Vector3_468396B4: {r: 0, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 0.49803925, g: 0.49803925, b: 0.49803925, a: 1}

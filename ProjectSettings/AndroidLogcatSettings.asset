@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "LHS7N19131065023",
     "m_SelectedPackage": {
         "deviceId": "LHS7N19131065023",
-        "name": "com.DefaultCompany.Realmsv2",
-        "processId": 5625,
+        "name": "tech.marcosMorran.Realms",
+        "processId": 15514,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -16,74 +16,44 @@
         },
         {
             "deviceId": "LHS7N19131065023",
-            "name": "com.teslacoilsw.launcher",
-            "processId": 16461,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS7N19131065023",
-            "name": "com.DefaultCompany.Realmsv2",
-            "processId": 21761,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS7N19131065023",
-            "name": "com.DefaultCompany.Realmsv2",
-            "processId": 23675,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS7N19131065023",
-            "name": "com.DefaultCompany.Realmsv2",
-            "processId": 25626,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS7N19131065023",
-            "name": "com.DefaultCompany.Realmsv2",
-            "processId": 26598,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS7N19131065023",
-            "name": "com.DefaultCompany.Realmsv2",
-            "processId": 27901,
-            "exited": true
-        },
-        {
-            "deviceId": "LHS7N19131065023",
-            "name": "com.DefaultCompany.Realmsv2",
-            "processId": 26679,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS7N19131065023",
-            "name": "com.DefaultCompany.Realmsv2",
-            "processId": 30039,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS7N19131065023",
-            "name": "com.DefaultCompany.Realmsv2",
-            "processId": 25560,
-            "exited": false
-        },
-        {
-            "deviceId": "LHS7N19131065023",
             "name": "com.DefaultCompany.Realmsv2",
             "processId": 26009,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "LHS7N19131065023",
             "name": "com.DefaultCompany.Realmsv2",
             "processId": 30410,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "LHS7N19131065023",
             "name": "com.DefaultCompany.Realmsv2",
             "processId": 5625,
+            "exited": true
+        },
+        {
+            "deviceId": "LHS7N19131065023",
+            "name": "com.instagram.android",
+            "processId": 26385,
+            "exited": true
+        },
+        {
+            "deviceId": "LHS7N19131065023",
+            "name": "com.teslacoilsw.launcher",
+            "processId": 3691,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS7N19131065023",
+            "name": "tech.marcosMorran.Realms",
+            "processId": 16392,
+            "exited": false
+        },
+        {
+            "deviceId": "LHS7N19131065023",
+            "name": "tech.marcosMorran.Realms",
+            "processId": 15514,
             "exited": false
         }
     ],

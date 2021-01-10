@@ -64,17 +64,17 @@ public class EnviromentController : MonoBehaviour
     {
         Shader.SetGlobalInt("_InsidePortalStencilComp", 6);
         currentArtefact.SetActive(true);
-        var postprocessWeight = 1;
-        LeanTween.value(postprocessWeight, 1, 0.5f).setOnUpdate((float val) =>
-        {
-            postProcess.weight = val;
-        });
+        // var postprocessWeight = 1;
+        // LeanTween.value(postprocessWeight, 1, 0.5f).setOnUpdate((float val) =>
+        // {
+        //     postProcess.weight = val;
+        // });
     }
 
     void PortalExited()
     {
         Shader.SetGlobalInt("_InsidePortalStencilComp", 3);
 
-        postProcess.weight = 0;
+        // postProcess.weight = 0;
     }
 }
