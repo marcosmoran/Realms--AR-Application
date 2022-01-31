@@ -1,47 +1,32 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalController : MonoBehaviour
+public class Portal : MonoBehaviour
 {
-    #region Class References
-   
-    [SerializeField]
-    EnviromentController enviromentController;
-
-
-    #endregion
-
-    #region Object References
-    [SerializeField] GameObject portal;
-    GameObject portalWindow;
-    MeshRenderer portalDistorion;
-    GameObject portalStencil;
-    MeshRenderer doorFrame;
-    MeshRenderer door;
-    Animator portalDoorAnim;
-    #endregion
-    
-
+    public bool photoMode;
     bool isInsidePortal = false;
+
+    private Camera cam;
+    // Start is called before the first frame update
+    [SerializeField] private GameObject mainPortalGO;
+    [SerializeField]GameObject portalWindow;
+    [SerializeField]MeshRenderer portalDistorion;
+    [SerializeField]GameObject portalStencil;
+    [SerializeField]MeshRenderer doorFrame;
+    [SerializeField]MeshRenderer door;
+    [SerializeField] Animator portalDoorAnim;
     void Start()
     {
-        Debug.Log("Portal Controller Initialized");
-
-        GetPortalRefs();
         SetInitialValues();
-        Events.events.ExitedPortal();
+        cam = Camera.main;
         
     }
 
-    void GetPortalRefs()
+    // Update is called once per frame
+    void Update()
     {
-        door = GameObject.Find(portal.name + "/Portal Door/Door").GetComponent<MeshRenderer>();
-        portalDoorAnim = door.GetComponent<Animator>();
-        doorFrame = GameObject.Find(portal.name + "/Portal Door/Door Frame").GetComponent<MeshRenderer>();
-        portalWindow = GameObject.Find(portal.name + "/Portal Door/Window");
-        portalStencil = GameObject.Find(portal.name + "/Portal Door/Stencil");
-        portalDistorion = GameObject.Find(portal.name + "/Portal Door/Window/Distortion").GetComponent<MeshRenderer>();
+        
     }
     void SetInitialValues()
     {
@@ -52,41 +37,33 @@ public class PortalController : MonoBehaviour
         portalWindow.SetActive(false);
         portalStencil.SetActive(false);
     }
-    void Update()
-    {
-        if (!isInsidePortal)
-        {
-            PortalWindowOpacity();
-        };
-    }
-
     public void SpawnPortal()
     {
 
         Debug.Log("Spawning Portal");
-        portal.transform.position = Camera.main.transform.position + new Vector3(-0.5f, -2, 3);
+        mainPortalGO.transform.position = Camera.main.transform.position + new Vector3(-0.5f, -2, 3);
+        
         var dissolvedAmount = 1;
 
         // animate the portal shader and door opening
         LeanTween.value(dissolvedAmount, 0f, 1f).setEase(LeanTweenType.easeInQuad)
-        .setOnUpdate((float val) =>
-        {
-            door.material.SetFloat("_DissolveAmount", val);
-            doorFrame.material.SetFloat("_DissolveAmount", val);
-        })
-        .setOnComplete(() =>
-        {
-            portalWindow.SetActive(true);
-            portalStencil.SetActive(true);
-
-            Events.events.PortalSpawned();
-            portalDoorAnim.Play("OpenDoor");
-        }
-        );
-
+            .setOnUpdate((float val) =>
+            {
+                door.material.SetFloat("_DissolveAmount", val);
+                doorFrame.material.SetFloat("_DissolveAmount", val);
+            })
+            .setOnComplete(() =>
+                {
+                    portalWindow.SetActive(true);
+                    portalStencil.SetActive(true);
+                    Events.events.PortalSpawned();
+                    portalDoorAnim.Play("OpenDoor");
+                }
+            );
     }
-    void PortalWindowOpacity()
+    void PortalWindowOpacityCheck()
     {
+        if (photoMode) return;
         var distance = Vector3.Distance(Camera.main.transform.position, portalWindow.transform.position);
 
         if (distance < 3)
@@ -111,7 +88,7 @@ public class PortalController : MonoBehaviour
         //Logic for OnTriggerEnter in the portal stencil collider
         Debug.Log("Collision");
 
-        Vector3 playerPos = Camera.main.transform.position;
+        Vector3 playerPos = cam.transform.position;
 
         Debug.Log("RootPos " + rootPos.z + " Player Pos " + playerPos.z);
         if (rootPos.z > playerPos.z)
@@ -141,5 +118,4 @@ public class PortalController : MonoBehaviour
     }
 
     #endregion
-
 }

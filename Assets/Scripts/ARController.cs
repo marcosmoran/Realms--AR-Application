@@ -9,7 +9,7 @@ using UnityEngine.XR.ARSubsystems;
 public class ARController : MonoBehaviour
 {
     [SerializeField]
-    PortalController portalController;
+    Portal portalController;
     bool planeFound = false;
 
     [SerializeField]
@@ -23,14 +23,7 @@ public class ARController : MonoBehaviour
         if (!DebugMode.debug.appDebug) planeManager.planesChanged += FindPlane;
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    //Debug
+    
     public void ActivatePlaneDetect()
     {
         if (DebugMode.debug.editorDebug)

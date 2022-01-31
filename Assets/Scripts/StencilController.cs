@@ -7,7 +7,7 @@ public class StencilController : MonoBehaviour
 {
 
     [SerializeField]
-    PortalController portalController;
+    Portal portal;
     Material[] materials;
     [SerializeField]
     MeshRenderer meshRenderer;
@@ -28,7 +28,7 @@ public class StencilController : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         var cameraPos = col.transform.position;
-        portalController.CheckEnterCollision(transform.root.position);
+        portal.CheckEnterCollision(transform.root.position);
         // Debug.Log("Collision");
         // Vector3 playerPos = Camera.main.transform.position + Camera.main.transform.forward * (Camera.main.nearClipPlane * 4);
 
@@ -52,7 +52,7 @@ public class StencilController : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        portalController.CheckExitCollision();
+        portal.CheckExitCollision();
         // meshRenderer.enabled = true;
         // Debug.Log("Mesh On");
     }
