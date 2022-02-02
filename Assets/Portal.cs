@@ -5,8 +5,9 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public bool photoMode;
+    public float portalDist = 3;
     bool isInsidePortal = false;
-
+    
     private Camera cam;
     // Start is called before the first frame update
     [SerializeField] private GameObject mainPortalGO;
@@ -28,6 +29,12 @@ public class Portal : MonoBehaviour
     {
         
     }
+
+    public void SetPhotoMode(bool on)
+    {
+        photoMode = on;
+        Debug.Log("photomode");
+    }
     void SetInitialValues()
     {
         door.material.SetFloat("_DissolveAmount", 1);
@@ -39,9 +46,10 @@ public class Portal : MonoBehaviour
     }
     public void SpawnPortal()
     {
-
+        
+      
         Debug.Log("Spawning Portal");
-        mainPortalGO.transform.position = Camera.main.transform.position + new Vector3(-0.5f, -2, 3);
+        mainPortalGO.transform.position = Camera.main.transform.position + new Vector3(-0.5f, -2, portalDist);
         
         var dissolvedAmount = 1;
 
@@ -58,6 +66,11 @@ public class Portal : MonoBehaviour
                     portalStencil.SetActive(true);
                     Events.events.PortalSpawned();
                     portalDoorAnim.Play("OpenDoor");
+                    if (photoMode)
+                    {
+                        portalWindow.SetActive(false);
+                        portalDoorAnim.transform.gameObject.SetActive(false);
+                    }
                 }
             );
     }

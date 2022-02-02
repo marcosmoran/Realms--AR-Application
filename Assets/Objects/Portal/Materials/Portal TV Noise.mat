@@ -37,7 +37,7 @@ Material:
     - Normal_Strength: 107.9
     - Twirl_: 1
     - Vector1_1FB040C3: 0.028
-    - _Alpha: 0
+    - _Alpha: 1
     m_Colors:
     - Color_A73838F3: {r: 0.22315946, g: 0.04313723, b: 1, a: 0}
   m_BuildTextureStacks: []

@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "acb5d5e8",
+    "m_SelectedDeviceId": "d6ba809b",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "d6ba809b",
+        "name": "tech.marcosMorran.Realms",
+        "processId": 29204,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,42 @@
             "deviceId": "acb5d5e8",
             "name": "com.teslacoilsw.launcher",
             "processId": 13073,
+            "exited": false
+        },
+        {
+            "deviceId": "d6ba809b",
+            "name": "com.google.android.apps.youtube.music",
+            "processId": 1664,
+            "exited": false
+        },
+        {
+            "deviceId": "d6ba809b",
+            "name": "tech.marcosMorran.Realms",
+            "processId": 2723,
+            "exited": false
+        },
+        {
+            "deviceId": "d6ba809b",
+            "name": "tech.marcosMorran.Realms",
+            "processId": 14035,
+            "exited": false
+        },
+        {
+            "deviceId": "d6ba809b",
+            "name": "tech.marcosMorran.Realms",
+            "processId": 14902,
+            "exited": false
+        },
+        {
+            "deviceId": "d6ba809b",
+            "name": "tech.marcosMorran.Realms",
+            "processId": 25390,
+            "exited": false
+        },
+        {
+            "deviceId": "d6ba809b",
+            "name": "tech.marcosMorran.Realms",
+            "processId": 29204,
             "exited": false
         }
     ],
